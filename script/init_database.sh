@@ -13,7 +13,7 @@ fi
 if ! [ -x "$(command -v sqlx)" ]; then
   echo >&2 "Error: `sqlx` is not installed."
   echo >&2 "Use:"
-  echo >&2 "cargo install sqlx-cli --no-default-features --features native-tls,postgres"
+  echo >&2 "cargo install sqlx-cli@0.7.4 2 --locked --no-default-features --features native-tls,postgres"
   echo >&2 "to install it."
   exit 1
 fi

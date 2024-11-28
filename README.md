@@ -65,7 +65,7 @@ docker compose --file docker-compose-dev.yml up -d
 2. Install sqlx-cli
 
 ```bash
-cargo install sqlx-cli
+cargo install sqlx-cli@0.7.42 --locked
 ```
 
 3. Run sqlx migration
