@@ -661,7 +661,7 @@ dependencies = [
  "pgvector",
  "pin-project",
  "prometheus-client",
- "prost",
+ "prost 0.12.6",
  "rand 0.8.5",
  "rayon",
  "rcgen",
@@ -685,7 +685,7 @@ dependencies = [
  "tokio-tungstenite",
  "tokio-util",
  "tonic",
- "tonic-build",
+ "tonic-build 0.11.0",
  "tonic-proto",
  "tracing",
  "tracing-bunyan-formatter",
@@ -737,7 +737,7 @@ dependencies = [
  "md5",
  "parking_lot 0.12.3",
  "prometheus-client",
- "prost",
+ "prost 0.12.6",
  "rand 0.8.5",
  "rayon",
  "redis 0.25.4",
@@ -2077,7 +2077,7 @@ dependencies = [
  "parking_lot 0.12.3",
  "percent-encoding",
  "pin-project",
- "prost",
+ "prost 0.12.6",
  "rayon",
  "reqwest 0.11.27",
  "scraper",
@@ -2264,8 +2264,8 @@ dependencies = [
  "bytes",
  "collab",
  "getrandom 0.2.15",
- "prost",
- "prost-build",
+ "prost 0.12.6",
+ "prost-build 0.12.6",
  "protoc-bin-vendored",
  "serde",
  "serde_json",
@@ -2351,8 +2351,8 @@ dependencies = [
  "collab-entity",
  "collab-rt-protocol",
  "database-entity",
- "prost",
- "prost-build",
+ "prost 0.12.6",
+ "prost-build 0.12.6",
  "protoc-bin-vendored",
  "serde",
  "serde_json",
@@ -2388,7 +2388,7 @@ dependencies = [
  "chrono",
  "collab-entity",
  "futures",
- "prost",
+ "prost 0.12.6",
  "rand 0.8.5",
  "redis 0.25.4",
  "serde",
@@ -2935,7 +2935,7 @@ dependencies = [
  "chrono",
  "collab-entity",
  "infra",
- "prost",
+ "prost 0.12.6",
  "serde",
  "serde_json",
  "serde_repr",
@@ -5344,7 +5344,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "deb1435c188b76130da55f17a466d252ff7b1418b2ad3e037d127b94e3411f29"
 dependencies = [
  "bytes",
- "prost-derive",
+ "prost-derive 0.12.6",
+]
+
+[[package]]
+name = "prost"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b0487d90e047de87f984913713b85c601c05609aad5b0df4b4573fbf69aa13f"
+dependencies = [
+ "bytes",
+ "prost-derive 0.13.3",
 ]
 
 [[package]]
@@ -5361,8 +5371,29 @@ dependencies = [
  "once_cell",
  "petgraph",
  "prettyplease",
- "prost",
- "prost-types",
+ "prost 0.12.6",
+ "prost-types 0.12.6",
+ "regex",
+ "syn 2.0.72",
+ "tempfile",
+]
+
+[[package]]
+name = "prost-build"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c1318b19085f08681016926435853bbf7858f9c082d0999b80550ff5d9abe15"
+dependencies = [
+ "bytes",
+ "heck 0.5.0",
+ "itertools 0.12.1",
+ "log",
+ "multimap",
+ "once_cell",
+ "petgraph",
+ "prettyplease",
+ "prost 0.13.3",
+ "prost-types 0.13.3",
  "regex",
  "syn 2.0.72",
  "tempfile",
@@ -5382,12 +5413,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "prost-derive"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e9552f850d5f0964a4e4d0bf306459ac29323ddfbae05e35a7c0d35cb0803cc5"
+dependencies = [
+ "anyhow",
+ "itertools 0.12.1",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.72",
+]
+
+[[package]]
 name = "prost-types"
 version = "0.12.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9091c90b0a32608e984ff2fa4091273cbdd755d54935c51d520887f4a1dbd5b0"
 dependencies = [
- "prost",
+ "prost 0.12.6",
+]
+
+[[package]]
+name = "prost-types"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4759aa0d3a6232fb8dbdb97b61de2c20047c68aca932c7ed76da9d788508d670"
+dependencies = [
+ "prost 0.13.3",
 ]
 
 [[package]]
@@ -7427,7 +7480,7 @@ dependencies = [
  "hyper-timeout",
  "percent-encoding",
  "pin-project",
- "prost",
+ "prost 0.12.6",
  "tokio",
  "tokio-stream",
  "tower",
@@ -7444,7 +7497,21 @@ checksum = "be4ef6dd70a610078cb4e338a0f79d06bc759ff1b22d2120c2ff02ae264ba9c2"
 dependencies = [
  "prettyplease",
  "proc-macro2",
- "prost-build",
+ "prost-build 0.12.6",
+ "quote",
+ "syn 2.0.72",
+]
+
+[[package]]
+name = "tonic-build"
+version = "0.12.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9557ce109ea773b399c9b9e5dca39294110b74f1f342cb347a80d1fce8c26a11"
+dependencies = [
+ "prettyplease",
+ "proc-macro2",
+ "prost-build 0.13.3",
+ "prost-types 0.13.3",
  "quote",
  "syn 2.0.72",
 ]
@@ -7453,10 +7520,10 @@ dependencies = [
 name = "tonic-proto"
 version = "0.1.0"
 dependencies = [
- "prost",
+ "prost 0.12.6",
  "serde",
  "tonic",
- "tonic-build",
+ "tonic-build 0.12.3",
  "tracing",
 ]
 

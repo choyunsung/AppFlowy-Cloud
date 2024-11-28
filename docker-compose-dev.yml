@@ -13,8 +13,8 @@ services:
     restart: on-failure
     image: minio/minio
     ports:
-      - 9000:9000
-      - 9001:9001
+      - 9900:9000
+      - 9901:9901
     environment:
       - MINIO_BROWSER_REDIRECT_URL=http://localhost:9001
     command: server /data --console-address ":9001"
